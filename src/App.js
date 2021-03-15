@@ -1,17 +1,14 @@
 import './App.css';
 
-function Heading(props) {
-  const title = props.title;
+function Heading({ title }) {
   return <h1>{title}</h1>
 };
 
-function SongPlayer(props) {
-  const showControls = props.showControls;
-  const audioUrl = props.audioUrl;
+function SongPlayer({ showControls = true, audioUrl }) {
   return (
     <>
       <Heading title='Music Player'/>
-      <audio controls={showControls} >
+      <audio controls={showControls}>
         <source src={audioUrl} />
       </audio>
     </>
@@ -22,7 +19,7 @@ function SongPlayer(props) {
 function App() {
   return (
     <div className="App">
-      <SongPlayer showControls audioUrl="https://examples.devmastery.pl/assets/audio/deadfro5h.mp3"/>
+      <SongPlayer audioUrl="https://examples.devmastery.pl/assets/audio/deadfro5h.mp3"/>
     </div>
   );
 };
