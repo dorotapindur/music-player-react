@@ -17,6 +17,13 @@ function SongPlayer({ showControls = true, song }) {
   );
 };
 
+function SongListItem({ song }) {
+  return (
+    <li>
+      {song.title} by {song.artist}
+    </li>
+  )
+}
 
 function App() {
   const songs = [
@@ -45,6 +52,14 @@ function App() {
       <SongPlayer 
         song = {currentSong}
       />
+      <section>
+        <Heading title={"Songs"} />
+        <ul>{songs.map(song => 
+          <SongListItem 
+            key={song.audioUrl}
+            song={song} />
+        )}</ul>
+      </section>
     </div>
   );
 };
