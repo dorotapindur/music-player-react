@@ -17,10 +17,12 @@ function SongPlayer({ showControls = true, song }) {
   );
 };
 
-function SongListItem({ song }) {
+function SongListItem({ song, isCurrent }) {
+  const backgroundColor =  isCurrent ? "darkslategrey" : "none"
+  const style = { backgroundColor }
   return (
-    <li>
-      {song.title} by {song.artist}
+    <li style={style}>
+      {song.title} by {song.artist} {isCurrent && "*"}
     </li>
   )
 }
@@ -46,7 +48,7 @@ function App() {
       artist: "Wowa"
     }
   ];
-  const currentSong = songs[0];
+  const currentSong = songs[1];
   return (
     <div className="App">
       <SongPlayer 
@@ -57,7 +59,8 @@ function App() {
         <ul>{songs.map(song => 
           <SongListItem 
             key={song.audioUrl}
-            song={song} />
+            song={song}
+            isCurrent={currentSong.audioUrl === song.audioUrl} />
         )}</ul>
       </section>
     </div>
