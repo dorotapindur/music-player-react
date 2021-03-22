@@ -17,11 +17,14 @@ function SongPlayer({ showControls = true, song }) {
   );
 };
 
-function SongListItem({ song, isCurrent }) {
-  const backgroundColor =  isCurrent ? "darkslategrey" : "none"
-  const style = { backgroundColor }
+function SongListItem({ song, isCurrent, onSelect }) {
+  const backgroundColor =  isCurrent ? "darkslategrey" : "none";
+  const style = { backgroundColor };
+  function handleClick() {
+    onSelect(song);
+  };
   return (
-    <li style={style}>
+    <li style={style} onClick={handleClick}>
       {song.title} by {song.artist} {isCurrent && "*"}
     </li>
   )
@@ -49,6 +52,9 @@ function App() {
     }
   ];
   const currentSong = songs[1];
+  function handleSelectSong(selectedSong) {
+    console.log(selectedSong);
+  };
   return (
     <div className="App">
       <SongPlayer 
@@ -60,7 +66,8 @@ function App() {
           <SongListItem 
             key={song.audioUrl}
             song={song}
-            isCurrent={currentSong.audioUrl === song.audioUrl} />
+            isCurrent={currentSong.audioUrl === song.audioUrl}
+            onSelect={handleSelectSong} />
         )}</ul>
       </section>
     </div>
