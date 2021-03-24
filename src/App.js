@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 
 function Heading({ title }) {
   return <h1>{title}</h1>
@@ -18,8 +19,8 @@ function SongPlayer({ showControls = true, song }) {
 };
 
 function SongListItem({ song, isCurrent, onSelect }) {
-  const backgroundColor =  isCurrent ? "darkslategrey" : "none";
-  const style = { backgroundColor };
+  const background =  isCurrent ? "darkslategrey" : "none";
+  const style = { background };
   function handleClick() {
     onSelect(song);
   };
@@ -51,9 +52,15 @@ function App() {
       artist: "Wowa"
     }
   ];
-  const currentSong = songs[1];
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+  const currentSong = songs[currentSongIndex];
   function handleSelectSong(selectedSong) {
-    console.log(selectedSong);
+    const audioIndex = songs.findIndex(
+      (song) => song.audioUrl === selectedSong.audioUrl
+    );
+    if (audioIndex >= 0) {
+      setCurrentSongIndex(audioIndex);
+    }
   };
   return (
     <div className="App">
