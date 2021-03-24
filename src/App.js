@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect,  } from 'react';
 
 function Heading({ title }) {
   return <h1>{title}</h1>
@@ -37,26 +37,15 @@ function SongListItem({ song, isCurrent, onSelect }) {
 }
 
 function App() {
-  const songs = [
-    {
-      audioUrl: "https://examples.devmastery.pl/assets/audio/deadfro5h.mp3",
-      coverUrl: "https://examples.devmastery.pl/assets/audio/deadfro5h.jpg",
-      title: "Deadfro5h",
-      artist: "starfrosh"
-    },
-    {
-      audioUrl: "https://examples.devmastery.pl/assets/audio/majesty.mp3",
-      coverUrl: "https://examples.devmastery.pl/assets/audio/majesty.jpg",
-      title: "Majesty (Original Mix)",
-      artist: "Ryan Craig Martin"
-    },
-    {
-      audioUrl: "https://examples.devmastery.pl/assets/audio/runs.mp3",
-      coverUrl: "https://examples.devmastery.pl/assets/audio/runs.jpg",
-      title: "Runs",
-      artist: "Wowa"
-    }
-  ];
+  const URL = "https://examples.devmastery.pl/songs-api/songs";
+  const [songs, setSongs] = useState([]);
+  useEffect(() => {
+    fetch(URL).then((response) => {
+      if (response.ok) {
+        response.json().then(setSongs)
+      }
+    })
+  }, []);
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const currentSong = songs[currentSongIndex];
   function handleSelectSong(selectedSong) {
@@ -69,19 +58,23 @@ function App() {
   };
   return (
     <div className="App">
-      <SongPlayer 
-        song = {currentSong}
-      />
-      <section>
-        <Heading title={"Songs"} />
-        <ul>{songs.map(song => 
-          <SongListItem 
-            key={song.audioUrl}
-            song={song}
-            isCurrent={currentSong.audioUrl === song.audioUrl}
-            onSelect={handleSelectSong} />
-        )}</ul>
-      </section>
+      {songs.length === 0 ? "Loading..." : (
+        <>
+          <SongPlayer 
+          song = {currentSong}
+          />
+          <section>
+            <Heading title={"Songs"} />
+            <ul>{songs.map(song => 
+              <SongListItem 
+                key={song.audioUrl}
+                song={song}
+                isCurrent={currentSong.audioUrl === song.audioUrl}
+                onSelect={handleSelectSong} />
+            )}</ul>
+          </section>
+        </>)
+      }
     </div>
   );
 };
