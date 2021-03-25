@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Heading } from './Heading';
+import './SongPlayer.css';
 
 export function SongPlayer({ showControls = false, song }) {
   const audioRef = useRef();

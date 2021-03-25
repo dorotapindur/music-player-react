@@ -1,9 +1,10 @@
-import './App.css';
 import { useState, useEffect,  } from 'react';
 import { Heading } from './Heading';
 import { SongPlayer } from './SongPlayer';
 import { Songs } from './Songs';
 import { SongListItem } from './SongListItem';
+
+import './App.css';
 
 export function App() {
   const URL = "https://examples.devmastery.pl/songs-api/songs";
