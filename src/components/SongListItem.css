@@ -1,12 +1,33 @@
 .SongListItem {
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.SongListItem.selected {
+  background-color: darkslategray;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+}
+.SongListItem.selected p {
+  animation: 2s ease-out infinite shiningletters ;
+}
+
+@keyframes shiningletters {
+  0% {
+    text-shadow: none;
   }
-  
-  .SongListItem.selected {
-    background-color: darkslategray;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+  50% {
+    text-shadow: 0 0 5px powderblue;
   }
+  100% {
+    text-shadow: none;
+  }
+}
