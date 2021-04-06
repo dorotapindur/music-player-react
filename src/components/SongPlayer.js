@@ -15,6 +15,11 @@ export function SongPlayer({ showControls = false, song }) {
       <div>
         <button onClick={() => audioRef.current.play()}>Play</button>
         <button onClick={() => audioRef.current.pause()}>Pause</button>
+        <button onClick={() => {
+            audioRef.current.pause();
+            audioRef.current.currentTime = 0;          
+          }
+        }>Stop</button>
       </div>
     </section>
   );
