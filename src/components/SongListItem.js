@@ -6,7 +6,7 @@ export function SongListItem({ song, isCurrent, onSelect }) {
   };
   return (
     <li className={`SongListItem ${isCurrent ? "selected" : ""}`} onClick={handleClick}>
-      {song.title} by {song.artist}
+      <b>{song.artist}</b> - <i>{song.title}</i>
     </li>
   );
 }

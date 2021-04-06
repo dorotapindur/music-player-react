@@ -1,4 +1,4 @@
-import { useState, useEffect,  } from 'react';
+import { useState, useEffect } from 'react';
 import { Heading } from './Heading';
 import { SongPlayer } from './SongPlayer';
 import { Songs } from './Songs';
