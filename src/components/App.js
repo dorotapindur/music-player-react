@@ -31,6 +31,7 @@ export function App() {
     <div className="App">
       {songs.length === 0 ? "Loading..." : (
         <>
+          <h1>Song Player</h1>
           <SongPlayer 
           song = {currentSong}
           />

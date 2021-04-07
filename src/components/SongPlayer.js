@@ -7,7 +7,7 @@ export function SongPlayer({ showControls = false, song }) {
   const { audioUrl, coverUrl } = song;
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const [isStopped, setIsStopped] = useState(true);
+  const [isStopped, setIsStopped] = useState(false);
   function handlePlay() {
     setIsPlaying(true);
     setIsPaused(false);
@@ -37,7 +37,7 @@ export function SongPlayer({ showControls = false, song }) {
   }
   return (
     <section className="SongPlayer">
-      <Heading title='Music Player' />
+      <Heading title={song.title} />
       <img width="250" height="250" src={coverUrl} alt="Song cover" />
       <audio ref={audioRef} key={audioUrl} controls={showControls}>
         <source src={audioUrl} />
