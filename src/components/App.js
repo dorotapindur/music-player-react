@@ -24,6 +24,7 @@ export function App() {
     );
     if (audioIndex >= 0) {
       setCurrentSongIndex(audioIndex);
+      console.log(currentSongIndex);
     }
   };
   return (

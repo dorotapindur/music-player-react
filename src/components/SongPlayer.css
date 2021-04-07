@@ -16,7 +16,7 @@
   height: 250px;
 }
 
-.SongPlayer button {
+.SongPlayerButton {
   padding: 10px;
   margin: 0 10px;
   border-radius: 5px;
@@ -24,4 +24,25 @@
   font-weight: bold;
   background-color: gold;
   cursor: pointer;
+}
+
+.activeButton {
+  background-color: red;
+  box-shadow: 0 0 5px rgb(255, 161, 161);
+}
+.blinkingButton {
+  animation: 2s linear infinite blink;
+}
+@keyframes blink {
+  0% {
+    background-color: red;
+    box-shadow: 0 0 5px rgb(255, 161, 161);
+  }
+  50% {
+    background-color: gold;
+  }
+  100% {
+    background-color: red;
+    box-shadow: 0 0 5px rgb(255, 161, 161);
+  }
 }
