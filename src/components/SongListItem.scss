@@ -1,3 +1,5 @@
+@import '../_variables.scss';
+
 .SongListItem {
   padding: 10px;
   border-radius: 5px;
@@ -10,8 +12,8 @@ p {
 }
 
 .SongListItem.selected {
-  background-color: darkslategray;
-  color: white;
+  background-color: $medium-color;
+  color: $shine;
   font-weight: bold;
   cursor: pointer;
   overflow: hidden;
@@ -25,7 +27,7 @@ p {
     text-shadow: none;
   }
   50% {
-    text-shadow: 0 0 5px powderblue;
+    text-shadow: 0 0 5px $light-color;
   }
   100% {
     text-shadow: none;

@@ -1,6 +1,8 @@
+@import './_variables.scss';
+
 body {
-  background: #13201f;
-  color: white;
+  background: $dark-color;
+  color: $shine;
   margin: 0;
   font-family: sans-serif;
   display: flex;

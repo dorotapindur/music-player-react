@@ -1,9 +1,11 @@
+@import '../_variables.scss';
+
 .Songs {
   width: 500px;
   padding: 10px;
   margin-top: 20px;
-  background-color: powderblue;
-  color: darkslategray;
+  background-color: $light-color;
+  color: $medium-color;
   border-radius: 5px;
 }
 

@@ -1,9 +1,11 @@
+@import '../_variables.scss';
+
 .Heading {
-  color: white;
+  color: $shine;
   margin: 10px;
   text-transform: uppercase;
 }
 .songsHeading {
-  color: rgb(26, 43, 43);
+  color: $dark-color;
   text-transform: uppercase;
 }

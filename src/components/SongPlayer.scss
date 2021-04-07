@@ -1,11 +1,10 @@
-$contrast-color: #fd5151;
-$active-color: #ffb1b1;
+@import '../variables.scss';
 
 .SongPlayer {
   width: 500px;
   margin: 0 auto;
   padding: 10px 10px 20px;
-  background-color: darkslategrey;
+  background-color: $medium-color;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -31,7 +30,7 @@ $active-color: #ffb1b1;
 
 .activeButton {
   background-color: $active-color;
-  box-shadow: 0 0 5px #ffe2b7;
+  box-shadow: 0 0 5px $shine;
 }
 .blinkingButton {
   animation: 2s linear infinite blink;
@@ -39,13 +38,13 @@ $active-color: #ffb1b1;
 @keyframes blink {
   0% {
     background-color: $active-color;
-    box-shadow: 0 0 5px #ffe2b7;
+    box-shadow: 0 0 5px $shine;
   }
   50% {
     background-color: $contrast-color;
   }
   100% {
     background-color: $active-color;
-    box-shadow: 0 0 5px #ffe2b7;
+    box-shadow: 0 0 5px $shine;
   }
 }
