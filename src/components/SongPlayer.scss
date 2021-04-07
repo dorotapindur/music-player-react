@@ -1,3 +1,6 @@
+$contrast-color: #fd5151;
+$active-color: #ffb1b1;
+
 .SongPlayer {
   width: 500px;
   margin: 0 auto;
@@ -22,12 +25,12 @@
   border-radius: 5px;
   border-style: none;
   font-weight: bold;
-  background-color: #ff2600;
+  background-color: $contrast-color;
   cursor: pointer;
 }
 
 .activeButton {
-  background-color: #ff916f;
+  background-color: $active-color;
   box-shadow: 0 0 5px #ffe2b7;
 }
 .blinkingButton {
@@ -35,14 +38,14 @@
 }
 @keyframes blink {
   0% {
-    background-color: #ff916f;
+    background-color: $active-color;
     box-shadow: 0 0 5px #ffe2b7;
   }
   50% {
-    background-color: #ff2600;
+    background-color: $contrast-color;
   }
   100% {
-    background-color: #ff916f;
+    background-color: $active-color;
     box-shadow: 0 0 5px #ffe2b7;
   }
 }

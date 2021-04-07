@@ -37,7 +37,7 @@ export function App() {
             key={currentSong.coverUrl}
           />
           <Songs>
-              <Heading title={"Songs"} />
+              <Heading title={"Songs"} headingClassName="songsHeading" />
               <ul>{songs.map(song => 
                 <SongListItem 
                   key={song.audioUrl}

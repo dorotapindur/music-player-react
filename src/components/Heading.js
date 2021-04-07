@@ -1,6 +1,6 @@
 import './Heading.scss';
 
-export function Heading({ title }) {
-  return <h2 className="Heading">{title}</h2>;
+export function Heading({ title, headingClassName }) {
+  return <h2 className={headingClassName}>{title}</h2>;
 }
 ;

@@ -37,7 +37,7 @@ export function SongPlayer({ showControls = false, song }) {
   }
   return (
     <section className="SongPlayer">
-      <Heading title={song.title} />
+      <Heading title={song.title} headingClassName="Heading" />
       <img width="250" height="250" src={coverUrl} alt="Song cover" />
       <audio ref={audioRef} controls={showControls}>
         <source src={audioUrl} />
