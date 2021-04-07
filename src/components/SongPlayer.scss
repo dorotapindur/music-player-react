@@ -22,27 +22,27 @@
   border-radius: 5px;
   border-style: none;
   font-weight: bold;
-  background-color: gold;
+  background-color: #ff2600;
   cursor: pointer;
 }
 
 .activeButton {
-  background-color: red;
-  box-shadow: 0 0 5px rgb(255, 161, 161);
+  background-color: #ff916f;
+  box-shadow: 0 0 5px #ffe2b7;
 }
 .blinkingButton {
   animation: 2s linear infinite blink;
 }
 @keyframes blink {
   0% {
-    background-color: red;
-    box-shadow: 0 0 5px rgb(255, 161, 161);
+    background-color: #ff916f;
+    box-shadow: 0 0 5px #ffe2b7;
   }
   50% {
-    background-color: gold;
+    background-color: #ff2600;
   }
   100% {
-    background-color: red;
-    box-shadow: 0 0 5px rgb(255, 161, 161);
+    background-color: #ff916f;
+    box-shadow: 0 0 5px #ffe2b7;
   }
 }

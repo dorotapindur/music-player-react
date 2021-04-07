@@ -4,7 +4,7 @@ import { SongPlayer } from './SongPlayer';
 import { Songs } from './Songs';
 import { SongListItem } from './SongListItem';
 
-import './App.css';
+import './App.scss';
 
 export function App() {
   const URL = "https://examples.devmastery.pl/songs-api/songs";

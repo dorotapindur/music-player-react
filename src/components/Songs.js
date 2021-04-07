@@ -1,4 +1,4 @@
-import './Songs.css';
+import './Songs.scss';
 
 export function Songs({ children }) {
   return (

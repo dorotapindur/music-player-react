@@ -1,4 +1,4 @@
-import './SongListItem.css';
+import './SongListItem.scss';
 
 export function SongListItem({ song, isCurrent, onSelect }) {
   function handleClick() {
