@@ -1,7 +1,8 @@
 @import '../variables.scss';
 
 .SongPlayer {
-  width: 500px;
+  width: 80vw;
+  max-width: 500px;
   margin: 0 auto;
   padding: 10px 10px 20px;
   background-color: $medium-color;
@@ -12,19 +13,24 @@
 }
 
 .SongPlayer img {
-  margin: 10px auto 20px;
+  margin: 10px auto 10px;
   border-radius: 5px;
   width: 250px;
   height: 250px;
+  @media screen and (max-width: 330px) {
+    max-width: 70vw;
+    max-height: 70vw;
+  }
 }
 
 .SongPlayerButton {
   padding: 10px;
-  margin: 0 10px;
+  margin: 10px;
   border-radius: 5px;
   border-style: none;
   font-weight: bold;
   background-color: $contrast-color;
+  color: $dark-color;
   cursor: pointer;
 }
 
