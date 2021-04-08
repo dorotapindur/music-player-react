@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { Heading } from './Heading';
 import './SongPlayer.scss';
 
@@ -8,12 +8,17 @@ export function SongPlayer({ showControls = false, song }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isStopped, setIsStopped] = useState(false);
+  useEffect(() => {
+    setIsPlaying(false);
+    setIsPaused(false);
+    setIsStopped(false);
+  }, [audioUrl]);
   function handlePlay() {
     setIsPlaying(true);
     setIsPaused(false);
     setIsStopped(false);
     audioRef.current.play();
-    console.log(isPlaying);
+    
   }
   function handlePause() {
     setIsPaused(true);
@@ -39,7 +44,7 @@ export function SongPlayer({ showControls = false, song }) {
     <section className="SongPlayer">
       <Heading title={`" ${song.title} "`} headingClassName="Heading" />
       <img width="250" height="250" src={coverUrl} alt="Song cover" />
-      <audio ref={audioRef} controls={showControls}>
+      <audio key={audioUrl} ref={audioRef} controls={showControls}>
         <source src={audioUrl} />
       </audio>
       <div>

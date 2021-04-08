@@ -34,7 +34,7 @@ export function App() {
           <h1>Song Player</h1>
           <SongPlayer 
             song = {currentSong}
-            key={currentSong.coverUrl}
+            
           />
           <Songs>
               <Heading title={"Songs"} headingClassName="songsHeading" />
