@@ -23,7 +23,7 @@
   }
 }
 
-.SongPlayerButton {
+.SongPlayerButton, .rewindForwardButton {
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
@@ -33,7 +33,10 @@
   color: $dark-color;
   cursor: pointer;
 }
-
+.rewindForwardButton {
+  font-size: 12px;
+  padding: 5px;
+}
 .activeButton {
   background-color: $active-color;
   box-shadow: 0 0 5px $shine;

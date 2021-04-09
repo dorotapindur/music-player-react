@@ -48,9 +48,11 @@ export function SongPlayer({ showControls = false, song }) {
         <source src={audioUrl} />
       </audio>
       <div>
+        <button className="rewindForwardButton" alt="rewind 15 seconds">&#10877; 15"</button>
         <button onClick={handlePlay} className={playButtonClassName} >Play</button>
         <button onClick={handlePause} className={`SongPlayerButton ${(isPaused === true && isPlaying === true) ? "activeButton" : ""}`}>Pause</button>
         <button onClick={handleStop} className={`SongPlayerButton ${isStopped ? "activeButton" : ""}`}>Stop</button>
+        <button className="rewindForwardButton" alt="forward 15 seconds">15" &#10878;</button>
       </div>
     </section>
   );
