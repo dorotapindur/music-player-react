@@ -36,6 +36,9 @@
 .rewindForwardButton {
   font-size: 12px;
   padding: 5px;
+  &:active {
+    background-color: $active-color;
+  }
 }
 .activeButton {
   background-color: $active-color;

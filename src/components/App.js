@@ -24,7 +24,6 @@ export function App() {
     );
     if (audioIndex >= 0) {
       setCurrentSongIndex(audioIndex);
-      console.log(currentSongIndex);
     }
   };
   return (
@@ -34,7 +33,6 @@ export function App() {
           <h1>Song Player</h1>
           <SongPlayer 
             song = {currentSong}
-            
           />
           <Songs>
               <Heading title={"Songs"} headingClassName="songsHeading" />
