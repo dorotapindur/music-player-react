@@ -15,6 +15,7 @@
 .SongPlayer img {
   margin: 10px auto 10px;
   border-radius: 5px;
+  box-shadow: 3px 3px 5px $dark-color, -1px -1px 5px $light-color;
   width: 250px;
   height: 250px;
   @media screen and (max-width: 330px) {
@@ -43,7 +44,7 @@
 }
 .activeButton {
   background-color: $active-color;
-  box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color, 0 0 12px $shine;
+  box-shadow: inset -2px -2px 5px $shine, inset 2px 2px 5px $dark-color, 0 0 12px $shine;
 }
 .blinkingButton {
   animation: 2s linear infinite blink;
@@ -51,14 +52,14 @@
 @keyframes blink {
   0% {
     background-color: $active-color;
-    box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color, 0 0 10px $shine;
+    box-shadow: inset -2px -2px 5px $shine, inset 2px 2px 5px $dark-color, 0 0 10px $shine;
   }
   50% {
     background-color: $contrast-color;
-    box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color;
+    box-shadow: inset -2px -2px 5px $shine, inset 2px 2px 5px $dark-color;
   }
   100% {
     background-color: $active-color;
-    box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color, 0 0 10px $shine;
+    box-shadow: inset -2px -2px 5px $shine, inset 2px 2px 5px $dark-color, 0 0 10px $shine;
   }
 }

@@ -20,6 +20,9 @@ p {
   font-weight: bold;
   cursor: pointer;
   overflow: hidden;
+  border-right: 1px $medium-color solid;
+  border-bottom: 1px $medium-color solid;
+  box-shadow: inset -1px -1px 3px $light-color, inset 2px 2px 5px $dark-color;
 }
 .SongListItem.selected p {
   animation: 2s ease-out infinite shiningletters ;
