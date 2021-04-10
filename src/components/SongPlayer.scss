@@ -28,6 +28,7 @@
   margin: 10px;
   border-radius: 5px;
   border-style: none;
+  box-shadow: 2px 2px 5px $dark-color, -1px -1px 5px $light-color;
   font-weight: bold;
   background-color: $contrast-color;
   color: $dark-color;
@@ -42,7 +43,7 @@
 }
 .activeButton {
   background-color: $active-color;
-  box-shadow: 0 0 5px $shine;
+  box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color, 0 0 12px $shine;
 }
 .blinkingButton {
   animation: 2s linear infinite blink;
@@ -50,13 +51,14 @@
 @keyframes blink {
   0% {
     background-color: $active-color;
-    box-shadow: 0 0 5px $shine;
+    box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color, 0 0 10px $shine;
   }
   50% {
     background-color: $contrast-color;
+    box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color;
   }
   100% {
     background-color: $active-color;
-    box-shadow: 0 0 5px $shine;
+    box-shadow: inset -2px -2px 5px $shine, inset 1px 1px 5px $dark-color, 0 0 10px $shine;
   }
 }
